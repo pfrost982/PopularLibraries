@@ -1,8 +1,8 @@
-package ru.gb.popularlibraries
+package ru.gb.popularlibraries.models
 
 class CountersModel {
 
-    val counters = mutableListOf(0, 0, 0)
+    private val counters = mutableListOf(0, 0, 0)
 
     fun getCurrent(index: Int): Int {
         return counters[index]
