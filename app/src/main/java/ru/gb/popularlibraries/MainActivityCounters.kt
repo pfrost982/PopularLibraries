@@ -3,13 +3,13 @@ package ru.gb.popularlibraries
 import android.os.Bundle
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
-import ru.gb.popularlibraries.databinding.ActivityMainBinding
-import ru.gb.popularlibraries.mvp.ButtonType
-import ru.gb.popularlibraries.mvp.MainPresenter
-import ru.gb.popularlibraries.mvp.MainView
+import ru.gb.popularlibraries.databinding.ActivityMainCountersBinding
+import ru.gb.popularlibraries.mvp_counters.ButtonType
+import ru.gb.popularlibraries.mvp_counters.MainPresenter
+import ru.gb.popularlibraries.mvp_counters.MainView
 
-class MainActivity : MvpAppCompatActivity(), MainView {
-    private lateinit var binding: ActivityMainBinding
+class MainActivityCounters : MvpAppCompatActivity(), MainView {
+    private lateinit var binding: ActivityMainCountersBinding
 
     private val presenter by moxyPresenter {
         MainPresenter()
@@ -17,7 +17,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainCountersBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.btnCounter1.setOnClickListener { presenter.counterClick(ButtonType.FIRST_BUTTON) }

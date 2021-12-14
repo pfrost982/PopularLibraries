@@ -1,4 +1,4 @@
-package ru.gb.popularlibraries.models
+package ru.gb.popularlibraries.model_counters
 
 class CountersModel {
 
