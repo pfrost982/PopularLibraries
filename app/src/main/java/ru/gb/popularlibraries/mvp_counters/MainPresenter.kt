@@ -1,7 +1,7 @@
-package ru.gb.popularlibraries.mvp
+package ru.gb.popularlibraries.mvp_counters
 
 import moxy.MvpPresenter
-import ru.gb.popularlibraries.models.CountersModel
+import ru.gb.popularlibraries.model_counters.CountersModel
 
 class MainPresenter : MvpPresenter<MainView>() {
 

@@ -1,4 +1,4 @@
-package ru.gb.popularlibraries.mvp
+package ru.gb.popularlibraries.mvp_counters
 
 import moxy.MvpView
 import moxy.viewstate.strategy.OneExecutionStateStrategy
