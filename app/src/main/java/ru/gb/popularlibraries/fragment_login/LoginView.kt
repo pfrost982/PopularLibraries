@@ -8,4 +8,5 @@ import moxy.viewstate.strategy.StateStrategyType
 interface LoginView : MvpView {
     fun setLoginText(login: String)
     fun setPasswordText(password: String)
+    fun showLoginFailed(errorString: String)
 }

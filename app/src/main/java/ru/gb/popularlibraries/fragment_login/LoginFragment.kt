@@ -41,21 +41,15 @@ class LoginFragment : MvpAppCompatFragment(), LoginView {
         }
     }
 
-    private fun showLoginFailed(errorString: String) {
-        val appContext = context?.applicationContext ?: return
-        Toast.makeText(appContext, errorString, Toast.LENGTH_LONG).show()
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
-    override fun setLoginText(login: String) {
-        binding.username.setText(login)
-    }
+    override fun setLoginText(login: String) = binding.username.setText(login)
 
-    override fun setPasswordText(password: String) {
-        binding.password.setText(password)
-    }
+    override fun setPasswordText(password: String) = binding.password.setText(password)
+
+    override fun showLoginFailed(errorString: String) =
+        Toast.makeText(activity, errorString, Toast.LENGTH_LONG).show()
 }

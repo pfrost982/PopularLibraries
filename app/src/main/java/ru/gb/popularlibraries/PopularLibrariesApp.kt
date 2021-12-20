@@ -8,8 +8,5 @@ class PopularLibrariesApp : Application() {
         private val cicerone = Cicerone.create()
         val navigatorHolder = cicerone.getNavigatorHolder()
         val router = cicerone.router
-
-        var savedUsername: String = "usernameApp"
-        var savedPassword: String = "passwordApp"
     }
 }
