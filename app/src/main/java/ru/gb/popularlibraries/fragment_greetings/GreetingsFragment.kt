@@ -50,4 +50,8 @@ class GreetingsFragment : MvpAppCompatFragment(), GreetingsView {
     override fun setGreetingsText(greetings: String) {
         binding.greetingsText.text = greetings
     }
+
+    override fun setNumber(number: Long) {
+        binding.numberEditText.setText(number.toString())
+    }
 }
