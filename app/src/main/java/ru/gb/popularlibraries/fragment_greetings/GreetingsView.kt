@@ -5,7 +5,8 @@ import moxy.viewstate.strategy.SingleStateStrategy
 import moxy.viewstate.strategy.StateStrategyType
 
 @StateStrategyType(SingleStateStrategy::class)
-interface GreetingsView: MvpView {
+interface GreetingsView : MvpView {
     fun setGreetingsText(greetings: String)
     fun setNumber(number: Long)
+    fun showInvalidNumber(errorString: String)
 }

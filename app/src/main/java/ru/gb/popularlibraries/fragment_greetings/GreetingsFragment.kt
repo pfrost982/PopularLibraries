@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
-import ru.gb.popularlibraries.PopularLibrariesApp.Navigation.router
 import ru.gb.popularlibraries.databinding.FragmentGreetingsBinding
 
 class GreetingsFragment : MvpAppCompatFragment(), GreetingsView {
@@ -27,7 +27,7 @@ class GreetingsFragment : MvpAppCompatFragment(), GreetingsView {
     }
 
     private val presenter: GreetingsPresenter by moxyPresenter {
-        GreetingsPresenter(username, router)
+        GreetingsPresenter(username)
     }
 
     private var _binding: FragmentGreetingsBinding? = null
@@ -42,6 +42,11 @@ class GreetingsFragment : MvpAppCompatFragment(), GreetingsView {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.calculateButton.setOnClickListener { presenter.calculate(binding.numberEditText.text.toString()) }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -54,4 +59,7 @@ class GreetingsFragment : MvpAppCompatFragment(), GreetingsView {
     override fun setNumber(number: Long) {
         binding.numberEditText.setText(number.toString())
     }
+
+    override fun showInvalidNumber(errorString: String) =
+        Toast.makeText(activity, errorString, Toast.LENGTH_LONG).show()
 }
